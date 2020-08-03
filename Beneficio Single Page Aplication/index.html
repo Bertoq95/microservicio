@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<title>Beneficios SPA</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body class="w-75 mx-auto">
+<h1 class="display-4 text-center">Beneficios SPA</h1>
+<ul class="nav nav-tabs" id="Tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="lista-tab" data-toggle="tab" href="#lista" role="tab" aria-controls="lista" aria-selected="true">Lista de beneficios</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="alta-tab" data-toggle="tab" href="#alta" role="tab" aria-controls="profile" aria-selected="false">Alta de beneficio</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="consultar-tab" data-toggle="tab" href="#consultar" role="tab" aria-controls="consultar" aria-selected="false">Consultar beneficio</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="lista" role="tabpanel" aria-labelledby="lista-tab">
+        <!-- div lista de beneficios -->
+        <table class="table" id="lista-beneficios">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Presupuesto</th>
+                <th scope="col">Saldo disponible</th>
+                <th scope="col">Usuario</th>
+            </tr>
+            </thead>
+            <tbody id="cuerpoLista">
+            <!--get lista de beneficios-->
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-pane fade" id="alta" role="tabpanel" aria-labelledby="alta-tab">
+        <!-- form alta de beneficios -->
+        <form id="formulario-alta" method="post">
+            <div class="form-group">
+                <label for="nombreInput">Nombre de beneficio</label>
+                <input type="text" class="form-control" id="nombreInput" name="nombreInput">
+            </div>
+            <div class="form-group">
+                <label for="usuario">Usuario</label>
+                <input type="text" class="form-control" id="usuario" name="usuario">
+            </div>
+            <div class="form-group">
+                <label for="presupuesto">Presupuesto</label>
+                <input type="text" class="form-control" id="presupuesto" name="presupuesto">
+            </div>
+            <div class="form-group">
+                <label for="cantidadItems">Cantidad de items</label>
+                <input type="number" class="form-control" id="cantidadItems" name="cantidadItems" min="1" max="100" value="1">
+            </div>
+            <div class="form-group">
+                <label for="codigoBeneficio">Codigo</label>
+                <input type="number" class="form-control" id="codigoBeneficio" name="codigoBeneficio">
+            </div>
+            <div class="form-group">
+                <label for="montoFijo">Monto fijo de descuento</label>
+                <input type="number" class="form-control" id="montoFijo" name="montoFijo">
+            </div>
+            <div class="form-group">
+                <label for="montoMinimo">Monto minimo de descuento</label>
+                <input type="number" class="form-control" id="montoMinimo" name="montoMinimo">
+            </div>
+            <div class="form-group">
+                <label for="montoMaximo">Monto maximo de descuento</label>
+                <input type="number" class="form-control" id="montoMaximo" name="montoMaximo">
+            </div>
+            <div class="form-group">
+                <label for="porcentaje">Porcentaje de descuento</label>
+                <input type="number" class="form-control" id="porcentaje" name="porcentaje" min="1" max="100" value="1">
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripcion</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="fechaExp">fecha de expiracion</label>
+                <input type="date" class="form-control" id="fechaExp" name="fechaExp" min="1" max="100" value="1">
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-alta">Enviar</button>
+        </form>
+    </div>
+    <!-- Contenido de consultar beneficio -->
+    <div class="tab-pane fade" id="consultar" role="tabpanel" aria-labelledby="consultar-tab">
+        <form id="formBusqueda">
+            <div class="form-group">
+                <label for="codBeneficioInput">Ingrese codigo del beneficio a buscar</label>
+                <input type="number" class="form-control" id="codBeneficioInput" name="codBeneficioInput">
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-busqueda">Buscar</button>
+        </form>
+        <p id="datosDeBeneficio"></p>
+    </div>
+</div>
+</body>
+<script src="js/AltaBeneficio.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="js/bootstrap.js"></script>
+</html>
